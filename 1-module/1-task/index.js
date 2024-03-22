@@ -1,11 +1,13 @@
 function factorial(n) {
-  let a = 1;
-  for (i = 1 ; i <= n ; i++) {
-    if (n === 1) {
-      return 1;
-    }
-    a *= i;
+  let productOfNumbers = 1;
+  if (n === 1) {
+    return 1;
   }
-  return a;
+
+  for (let i = 1; i <= n; i++) {
+    productOfNumbers *= i;
+  }
+
+  return productOfNumbers;
 }
 

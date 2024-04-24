@@ -49,7 +49,7 @@ export default class UserTable {
   }
 
   #render() {
-    this.elem = document.createElement("table");
+    this.elem = document.createElement('table');
     this.elem.innerHTML = this.#template();
 
     this.elem.addEventListener('click', this.#deleteButtonTr.bind(this));

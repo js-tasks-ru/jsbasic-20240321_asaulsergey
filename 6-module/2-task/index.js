@@ -9,7 +9,7 @@ export default class ProductCard {
 
   #template() {
     return `
-      <div class="card__top">
+      <div class="card__top" id=${this.#card.id}>
         <img src='/assets/images/products/${this.#card.image}' class="card__image" alt="product">
         <span class="card__price">€${(this.#card.price).toFixed(2)}</span>
       </div>
@@ -34,10 +34,9 @@ export default class ProductCard {
   #render() {
     this.elem = document.createElement("div");
     this.elem.classList.add('card');
-    this.elem.setAttribute('id', `${this.#card.id}`);
     this.elem.innerHTML = this.#template();
 
-    this.elem.querySelector('.card__button').addEventListener('click', this.#productClick.bind(this));
+    this.elem.querySelector('.card__button').addEventListener('click', this.#productClick);
 
     return this.elem;
   }
